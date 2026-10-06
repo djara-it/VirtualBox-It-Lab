@@ -1,70 +1,42 @@
-Laboratorio IT — Ubuntu Virtualizado en VirtualBox
+# IT VirtualBox Lab Infrastructure
 
+A structured, hands-on virtualized laboratory environment designed for network isolation, systems administration testing, and infrastructure experiments using VirtualBox.
 
+---
 
-\## Descripción
+## 📐 Design & Architecture Decisions
 
-Laboratorio práctico de soporte IT donde configuro e instalo Ubuntu 22.04 LTS
+### Why a Virtualized Lab?
+Virtualization allows safe experimentation with operating systems, network topologies, and security configurations without exposing the host system or local home network to risk.
 
-en VirtualBox, aplicando administración real de sistemas Linux: gestión de
+### Why VirtualBox?
+- **Accessibility:** Free, open-source, and cross-platform hypervisor suitable for rapid local prototyping.
+- **Networking Flexibility:** Supports internal networks, NAT Networks, Host-Only adapters, and bridged interfaces to simulate real-world enterprise topographies.
 
-paquetes, diagnóstico de red, gestión de usuarios y monitorización de recursos.
+### Key Architecture Choices & Troubleshooting
+1. **Graphics Controller Adjustment (VBoxVGA → VMSVGA):** Resolved boot black-screen issues by aligning display drivers with VirtualBox 7.0 requirements.
+2. **Network Diagnostics:** Manual installation of `net-tools` (`ifconfig`) and Guest Additions to ensure dynamic display scaling and proper adapter connectivity.
+3. **Resource Optimization:** Configured optimal RAM and CPU allocation for Ubuntu 22.04 LTS to run smoothly alongside host workloads.
 
+---
 
+## 🛠 Lab Capabilities & Demonstrated Skills
 
-Documentación completa disponible en `/documentacion/`.
+- **Virtualization Deployment:** OS installation, ISO configuration, and guest resource management.
+- **Systems Administration:** Package management, Linux command-line utilities (`htop`, `df`, `free`), and user account management (`adduser`, `usermod`).
+- **Networking & Diagnostics:** Verification of connectivity and interfaces using `ip addr`, `ping`, and network adapter configuration.
+- **Technical Documentation:** Comprehensive step-by-step documentation with visual evidence in `/documentacion/`.
 
+---
 
+## 🚀 Quick Setup & Usage
 
-\## Tecnologías
+### Prerequisites
+- [Oracle VirtualBox 7.0+](https://www.virtualbox.org/) installed.
+- Ubuntu 22.04 LTS ISO image.
 
-\- Oracle VirtualBox 7.0.x
-
-\- Ubuntu 22.04.4 LTS (Jammy Jellyfish)
-
-\- Terminal Linux / Bash
-
-
-
-\## Habilidades demostradas
-
-\- Configuración y despliegue de máquinas virtuales
-
-\- Instalación y actualización de sistemas operativos Linux
-
-\- Diagnóstico de red: ifconfig, ping, ip addr
-
-\- Monitorización de recursos: df, free, htop
-
-\- Administración de usuarios: adduser, usermod, su
-
-\- Troubleshooting real: pantalla negra, drivers, Guest Additions
-
-\- Documentación técnica profesional con evidencias visuales
-
-
-
-\## Problemas resueltos
-
-\- Pantalla negra por controlador gráfico incorrecto (VBoxVGA → VMSVGA)
-
-\- ifconfig no disponible por defecto en Ubuntu 22.04 (instalación net-tools)
-
-\- Resolución fija por ausencia de Guest Additions (instalación y configuración)
-
-
-
-\## Certificación
-
-Google IT Support Professional Certificate - https://coursera.org/share/d48caabb655222ede25088ed15806c92 
-
-
-
-\## Autor
-
-Darwin Jara Toledo
-
-pro.arwin5@gmail.com
-
-Disponible para posiciones de Soporte IT Nivel 1/2
-
+### Getting Started
+1. Create a new VM in VirtualBox allocating at least 2 CPUs and 2048 MB RAM.
+2. Set display controller to **VMSVGA** and attach the Ubuntu 22.04 ISO.
+3. Install **VirtualBox Guest Additions** post-installation for full display integration.
+4. Detailed documentation and screenshots are available in the [`/documentacion`](./documentacion/) directory.
